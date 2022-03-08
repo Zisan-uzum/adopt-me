@@ -1,8 +1,8 @@
 import SearchParams from "./components/SearchParams";
+import { Link } from "react-router-dom";
 const App = () => {
   return (
     <div>
-      <h1>Adopt me!</h1>
       <SearchParams />
     </div>
   );
