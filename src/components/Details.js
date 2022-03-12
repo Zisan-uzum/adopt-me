@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { DetailsImage } from "/DetailsImage";
 
-const Details = (props) => {
-  let tempImage = "http://pets-images.dev-apis.com/pets/none.jpg";
-
+const Details = ({ images }) => {
+  const { allImages } = { images };
   const { id } = useParams();
-  const { images } = props.location.images;
   const [pets, setPets] = useState([]);
-  const [chosenImage, changeImage] = useState(
-    !images.length ? tempImage : images[0]
-  );
 
   useEffect(() => {
     const loadPets = async () => {
@@ -20,7 +16,6 @@ const Details = (props) => {
     loadPets();
   }, [id]);
 
-  console.log("new branch");
   return (
     <div>
       {!pets.length ? (
@@ -29,9 +24,7 @@ const Details = (props) => {
         pets.map((pet) => {
           return (
             <div className="details">
-              <div>
-                <img src={chosenImage} alt="" />
-              </div>
+              <DetailsImage images={allImages}></DetailsImage>
               <div>
                 <h1>{pet.name}</h1>
                 <h2>{`${pet.animal} — ${pet.breed} — ${pet.city}, ${pet.state}`}</h2>

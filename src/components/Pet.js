@@ -8,7 +8,7 @@ const Pet = ({ animal, name, breed, images, location, id }) => {
     temp = images[0];
   }
   return (
-    <Link to={`/Details/${id}`} className="pet" state:images>
+    <Link to={`/Details/${id}`} className="pet" images={images}>
       <div className="image-container">
         <img src={temp} alt={name} />
       </div>
