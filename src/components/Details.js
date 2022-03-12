@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const Details = (props) => {
+const Details = () => {
   //let tempImage = "http://pets-images.dev-apis.com/pets/none.jpg";
 
   const { id } = useParams();
