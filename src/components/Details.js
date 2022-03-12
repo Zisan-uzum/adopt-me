@@ -20,6 +20,7 @@ const Details = (props) => {
     loadPets();
   }, [id]);
 
+  console.log("new branch");
   return (
     <div>
       {!pets.length ? (
