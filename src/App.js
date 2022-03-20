@@ -1,7 +1,7 @@
 import SearchParams from "./components/SearchParams";
-
+import Details from "./components/Details";
+import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 const App = () => {
   return (
     <>
