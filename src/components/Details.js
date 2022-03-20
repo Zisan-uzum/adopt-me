@@ -1,20 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { DetailsImage } from "./DetailsImage";
 
 const Details = () => {
-  //let tempImage = "http://pets-images.dev-apis.com/pets/none.jpg";
-
   const { id } = useParams();
   const [pets, setPets] = useState([]);
-  //const [chosenImage, changeImage] = useState(
-  //!images.length ? tempImage : images[0]
-  //);
 
   useEffect(() => {
     const loadPets = async () => {
       const res = await fetch(`http://pets-v2.dev-apis.com/pets?id=${id}`);
       const json = await res.json();
       setPets(json.pets);
+      console.log(pets.images);
     };
     loadPets();
   }, [id]);
@@ -29,6 +26,7 @@ const Details = () => {
             <div className="details">
               <div>
                 <h1>{pet.name}</h1>
+                <h2>Merhababaaa</h2>
                 <h2>{`${pet.animal} — ${pet.breed} — ${pet.city}, ${pet.state}`}</h2>
                 <button>Adopt {pet.name}</button>
                 <p>{pet.description}</p>

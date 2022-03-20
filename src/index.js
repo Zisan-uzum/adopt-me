@@ -8,13 +8,7 @@ const rootElement = document.getElementById("root");
 
 render(
   <BrowserRouter>
-    <header>
-      <Link to="/">Adopt Me!</Link>
-    </header>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/Details/:id" element={<Details />} />
-    </Routes>
+   <App/> 
   </BrowserRouter>,
   rootElement
 );
