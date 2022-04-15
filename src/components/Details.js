@@ -29,6 +29,7 @@ const Details = () => {
     pet.images && setCarousel(pet.images[index]);
   }, [index]);
 
+  //throw new Error("Error"); it is for testing error boundary
   return (
     <div>
       {loading ? (
